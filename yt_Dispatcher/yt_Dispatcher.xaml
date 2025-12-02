@@ -1,0 +1,311 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CCD9BBC0CB4_search_videos.Bundle;assembly=CCD9BBC0CB4_search_v.mwXWE2jTwjE1cIRJT4VlK301" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CCD9BBC0CB4_search_videos.Bundle</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>CCD9BBC0CB4_search_v.mwXWE2jTwjE1cIRJT4VlK301</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="746.8000000000001,2162.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Config" />
+      <Variable x:TypeArguments="x:Int32" Name="yt_MaxPages" />
+      <Variable x:TypeArguments="uiascb:search_videos[]" Name="yt_Videos" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_Config]" DisplayName="Init Config" sap:VirtualizedContainerService.HintSize="582.4,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Config.xlsx" />
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="yt_MaxPages" CacheStrategy="None" DisplayName="Get Asset" FolderPath="project scr@pe.ai" sap:VirtualizedContainerService.HintSize="582.4,175.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:Int32">[yt_MaxPages]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <isactr:ConnectorActivity Configuration="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" ConnectionId="03b02eff-a0b0-47a7-b4ad-44cd9bbc0cb4" DisplayName="Fetching Videos" sap:VirtualizedContainerService.HintSize="582.4,320" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="ba2a393a-fed0-3331-94dd-c9cbaeb9ed2c">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="Jit_search_videos" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:search_videos[]">[yt_Videos]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="order" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">date</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="publishedAfter" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="s:DateTimeOffset">2025-11-01 +05:30</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="maximumRecordsReturned" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">[yt_MaxPages]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="channelId" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">UCfaIu2jO-fppCQV_lchCRIQ</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+    </isactr:ConnectorActivity>
+    <WriteLine DisplayName="Verifying Fetched Videos Count" sap:VirtualizedContainerService.HintSize="582.4,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Total videos fetched: &quot; + yt_Videos.Count.ToString]" />
+    <ui:ForEach x:TypeArguments="uiascb:search_videos" CurrentIndex="{x:Null}" DisplayName="Pushing Videos to the Orchestrator Queue" sap:VirtualizedContainerService.HintSize="582.4,1401.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[yt_Videos]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="uiascb:search_videos">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="uiascb:search_videos" Name="currentsearch_videos" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="580.8,1280" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="qItem">
+                <Variable.Default>
+                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="New Dictionary(Of String, Object)" />
+                </Variable.Default>
+              </Variable>
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="547.2,528.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,418.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,358.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[qItem("VideoId")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[currentsearch_videos.videoId]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[qItem("VideoUrl")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[currentsearch_videos.videoUrl]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[qItem("Title")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[currentsearch_videos.title]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[qItem("ChannelId")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[currentsearch_videos.channelId]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[qItem("ChannelName")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[currentsearch_videos.channelTitle]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[qItem("PublishedAt")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[currentsearch_videos.publishedAt.ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[qItem("Description")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[currentsearch_videos.description]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[qItem("FetchTimestamp")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[Now.ToString("yyyy-MM-dd HH:mm:ss")]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="547.2,691.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <ui:AddQueueItem TimeoutMS="{x:Null}" ContinueOnError="False" DisplayName="Adding Videos to the yt_Queue" FolderPath="project scr@pe.ai" sap:VirtualizedContainerService.HintSize="449.6,195.2" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="yt_queue" Reference="[currentsearch_videos.videoId]">
+                  <ui:AddQueueItem.ItemInformation>
+                    <InArgument x:TypeArguments="x:String" x:Key="VideoId">[currentsearch_videos.videoId]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="VideoUrl">[currentsearch_videos.videoUrl]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Title">[currentsearch_videos.title]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="ChannelId">[currentsearch_videos.channelId]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="ChannelName">[currentsearch_videos.channelTitle]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="PublishedAt">[currentsearch_videos.publishedAt.ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Description">[currentsearch_videos.description]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="FetchTimestamp">[Now.ToString("yyyy-MM-dd HH:mm:ss")]</InArgument>
+                  </ui:AddQueueItem.ItemInformation>
+                </ui:AddQueueItem>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Duplicate or failed enqueue for VideoId: &quot; + currentsearch_videos.videoId.ToString()]" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+              <TryCatch.Finally>
+                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </TryCatch.Finally>
+            </TryCatch>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+  </Sequence>
+</Activity>

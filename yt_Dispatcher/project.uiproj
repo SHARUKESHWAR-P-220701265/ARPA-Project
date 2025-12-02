@@ -1,0 +1,6 @@
+{
+  "Name": "yt_Dispatcher",
+  "ProjectType": "Process",
+  "Description": "The dispatcher workflow to ingest youtube videos from a specific channel and pushing them to the yt_Queue",
+  "MainFile": "yt_Dispatcher.xaml"
+}

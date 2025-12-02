@@ -1,0 +1,6 @@
+{
+  "Name": "yt_Performer",
+  "ProjectType": "Process",
+  "Description": "The Performer built using REF to process transaction items from yt_queue by delegating it sub-agents",
+  "MainFile": "Main.xaml"
+}
