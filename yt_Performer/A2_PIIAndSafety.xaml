@@ -1,0 +1,287 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="A2_PIIAndSafety" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CB2C7794397_piiminus_signdetection_Create.Bundle;assembly=CB2C7794397_piiminus.tmIez19KFpF1GRygU3qcDjf1" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_out_AuditContext" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>A2_PIIAndSafety_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CB2C7794397_piiminus_signdetection_Create.Bundle</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>CB2C7794397_piiminus.tmIez19KFpF1GRygU3qcDjf1</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="A2_PIIAndSafety" sap:VirtualizedContainerService.HintSize="746.8000000000001,1710.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Object" Name="piiResult" />
+      <Variable x:TypeArguments="x:String" Name="piiDetails">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">No PII found.</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Name="piiFound">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="comments" />
+      <Variable x:TypeArguments="x:String" Name="out_maskedText" />
+      <Variable x:TypeArguments="uiascb:piiminus_signdetection_Create" Name="jit_piiminus_signdetection" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="513.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[comments]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_out_AuditContext("Comments").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="513.6,746.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <isactr:ConnectorActivity Configuration="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" ConnectionId="273274ad-a1cb-48d3-bd09-42b2c7794397" DisplayName="PII Filtering" sap:VirtualizedContainerService.HintSize="512,236" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="7439dcbc-32df-3cce-82d2-1c14ac68b65d">
+          <isactr:ConnectorActivity.FieldObjects>
+            <isactr:FieldObject Name="text" Type="FieldArgument">
+              <isactr:FieldObject.Value>
+                <InArgument x:TypeArguments="x:String">[comments]</InArgument>
+              </isactr:FieldObject.Value>
+            </isactr:FieldObject>
+            <isactr:FieldObject Name="languageCode" Type="FieldArgument">
+              <isactr:FieldObject.Value>
+                <InArgument x:TypeArguments="x:String">en</InArgument>
+              </isactr:FieldObject.Value>
+            </isactr:FieldObject>
+            <isactr:FieldObject Name="piiEntityCategories_array" Type="FieldArgument">
+              <isactr:FieldObject.Value>
+                <InArgument x:TypeArguments="s:String[]">[New String(){"Person","PersonType","PhoneNumber","Address","Email","URL","INPermanentAccount","INUniqueIdentificationNumber"}]</InArgument>
+              </isactr:FieldObject.Value>
+            </isactr:FieldObject>
+            <isactr:FieldObject Name="confidenceThreshold" Type="FieldArgument">
+              <isactr:FieldObject.Value>
+                <InArgument x:TypeArguments="x:Double">0.75</InArgument>
+              </isactr:FieldObject.Value>
+            </isactr:FieldObject>
+            <isactr:FieldObject Name="out_maskedText" Type="FieldArgument">
+              <isactr:FieldObject.Value>
+                <OutArgument x:TypeArguments="x:String">[out_maskedText]</OutArgument>
+              </isactr:FieldObject.Value>
+            </isactr:FieldObject>
+            <isactr:FieldObject Name="Jit_piiminus_signdetection" Type="FieldArgument">
+              <isactr:FieldObject.Value>
+                <OutArgument x:TypeArguments="uiascb:piiminus_signdetection_Create">[jit_piiminus_signdetection]</OutArgument>
+              </isactr:FieldObject.Value>
+            </isactr:FieldObject>
+          </isactr:ConnectorActivity.FieldObjects>
+        </isactr:ConnectorActivity>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,231.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Found")]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Object">[False]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Details")]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Object">["PII Check Failed" + exception.Message]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="512,89.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+    <Assign sap:VirtualizedContainerService.HintSize="513.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("MaskedText")]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[out_maskedText]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[jit_piiminus_signdetection IsNot Nothing]" sap:VirtualizedContainerService.HintSize="513.6,592" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,231.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Found")]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">[True]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Details")]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">[jit_piiminus_signdetection.detectedEntities]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,231.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Found")]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">[False]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Details")]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">["No PII Found"]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

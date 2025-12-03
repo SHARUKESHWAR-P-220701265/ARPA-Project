@@ -43,6 +43,7 @@
       <x:String>UiPath.Platform.Activities</x:String>
       <x:String>UiPath.IntegrationService.Activities.SWEntities.CCD9BBC0CB4_comments.Bundle</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CB2C7794397_piiminus_signdetection_Create.Bundle</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -98,6 +99,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>CB2C7794397_piiminus.tmIez19KFpF1GRygU3qcDjf1</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="A1_TextExtraction" sap:VirtualizedContainerService.HintSize="746.8000000000001,1109.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
