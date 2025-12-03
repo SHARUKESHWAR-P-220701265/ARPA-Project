@@ -125,7 +125,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_Config]" DisplayName="Init Config" sap:VirtualizedContainerService.HintSize="582.4,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Config.xlsx" />
+    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_Config]" DisplayName="Init Config" sap:VirtualizedContainerService.HintSize="582.4,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="TargetChannelDetails" WorkbookPath="Config.xlsx" />
     <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="yt_MaxRecords" CacheStrategy="None" DisplayName="Get Asset" FolderPath="project scr@pe.ai" sap:VirtualizedContainerService.HintSize="582.4,175.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:Int32">[yt_MaxRecords]</OutArgument>
@@ -155,7 +155,7 @@
         </isactr:FieldObject>
         <isactr:FieldObject Name="channelId" Type="FieldArgument">
           <isactr:FieldObject.Value>
-            <InArgument x:TypeArguments="x:String">[dt_Config.Rows(0).Item(1).ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String">[dt_Config.Rows(1).Item(1).ToString]</InArgument>
           </isactr:FieldObject.Value>
         </isactr:FieldObject>
       </isactr:ConnectorActivity.FieldObjects>
