@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="A1_TextExtraction" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CCD9BBC0CB4_comments.Bundle;assembly=CCD9BBC0CB4_comments.f5PJieuVQF1aaTtZ2Yf1OV2" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="A1_TextExtraction" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CCD9BBC0CB4_comments.Bundle;assembly=CCD9BBC0CB4_comments.f5PJieuVQF1aaTtZ2Yf1OV2" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_out_AuditContext" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
@@ -44,6 +44,11 @@
       <x:String>UiPath.IntegrationService.Activities.SWEntities.CCD9BBC0CB4_comments.Bundle</x:String>
       <x:String>System.Numerics</x:String>
       <x:String>UiPath.IntegrationService.Activities.SWEntities.CB2C7794397_piiminus_signdetection_Create.Bundle</x:String>
+      <x:String>System.Windows.Documents</x:String>
+      <x:String>System.Windows.Media.Animation</x:String>
+      <x:String>System.Windows</x:String>
+      <x:String>System.Windows.Threading</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -100,10 +105,18 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>CB2C7794397_piiminus.tmIez19KFpF1GRygU3qcDjf1</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationUI</AssemblyReference>
+      <AssemblyReference>System.Windows.Presentation</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="A1_TextExtraction" sap:VirtualizedContainerService.HintSize="746.8000000000001,1109.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="A1_TextExtraction" sap:VirtualizedContainerService.HintSize="678,1730.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(x:String)" Name="commentsList">
+        <Variable.Default>
+          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="New List(Of String)" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="comments">
         <Variable.Default>
           <Literal x:TypeArguments="x:String" Value="" />
@@ -125,7 +138,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[videoId]</OutArgument>
       </Assign.To>
@@ -133,7 +146,7 @@
         <InArgument x:TypeArguments="x:String">[in_out_AuditContext("VideoId").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACq1Wa2/bNhT9K4Q+u16SrRsWIEBrJ1ncJbWbuBm6oSho6drmQpEaH248w/99hxQlK3GS7kMRIJbuizznvrTJzgXJwg61clwoMtnxJrshbvIln0mqldnxX5972QW3H5WYCyqm64ogdMZTLxupyrvWbpO95yVlxxmXcro0xAt7TZI7OOnhkitFclRkvexU2ErydTJOmiAnmxtROaEV5OP4gFBrZugfLwxZphUxPWcrUZBmo9Mey2vn+OzikXjsszPlyAi1gIwY3fPcMRgWMnoHWeNnyBlBK4TuSgsCH9L2cacAF5exMFMLvN9o48amCFwd9rJLre98FWgbz/6m3CVIKY7NGotbLn1QiAB/wt0Szz/sWQXvwGNmlagqcn0nnCSo4YYcnAsJVPDG/0DQXJuLCOrkzWYeddtsG1kUC+g3z/I80VYkkidGlNysg19M49s8KFLSo+RS5zwZf/AE0142VkOuVhxWcy5tKAN7RW6piwk3OAsXqetj22srImbsS4T/8Fa3KZXfNf1T5HJ02uQ6mn8jl0dd3l7g50U2Uk98kwwbW2xKprR7fNTtx+BW7lFyKUrhLOiwXuLXaRACevK6ffFblqSCYsldKw0M2Iry2LzM7sLblxn5+Xsw8r/ro+T3ovTlNeXahKnhvFG0Xy1X/B7wo80eOyHpKQxTvpyRCQWQrANZJkbdoRYYEgvcBUC0KbmDaKTcj0cx8pyD49S2rw/2sb5HLe4lvwPI0b1LYR+DmELF5q3uAYgaeZpGTT4lzR2brZm3ZCxDTpeulCkChivTJghxQkg3gtcNUNQY2CqAYMJGr6fa4Axsdaf3xfTqEuJmZgU3ZLtVT9pzOkbx8AAs274wOJ6rA7iMvXtylbwT7ktDxP7q6Cge0LhD+VGEcdtHYmlh4n1uyKxETv0w6laoarL9mz+wMOrH4fD018FgeDAc/NSe2x/4MGb7zTtmI3vSbv568k6Qv/1wfsj51P159Gl+OL496rFbJA5Hnxz2D8If3JEZb+hEkXeGyx6b+JkU+e+0nuo7UifKyzCprzH5yLq2ka7JVhjP1Myax0TXLEamQVzUdsYSUtQE6Ki2n9HK3eUOVisExBfAbs1bx1VObd6Qok2WQOHYCAun4kNCYQtqAxwQe4E4y1cLrReSXq21d34WmiYxv04pGnokJjb7wyW6S+6Fc1VdOZD/RiiysDJzLsW/VDTR2ppId2A8KcLFeL6korOLA4BtIx8Y/RWtNXJUJnkacoAR93G9fyc8v+ML6sI+AvIu7nSHT9pPa6it5oFX/5cW7LMF/RwX44rqOo4LAbXxmJ6zafcbY+d4ydXC4/4QU5iCmKUTvN6Aw3rE4RtvgBV6h6kQvhUWgaRUd6GzB1Lnd/HLYPsfSDGvnjkKAAA=" ConnectionId="03b02eff-a0b0-47a7-b4ad-44cd9bbc0cb4" DisplayName="Connector activity" sap:VirtualizedContainerService.HintSize="451.2,216" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="754bb15f-7f23-35c7-bf23-c7ccbb5685e8">
+    <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACq1Wa2/bNhT9K4Q+u16SrRsWIEBrJ1ncJbWbuBm6oSho6drmQpEaH248w/99hxQlK3GS7kMRIJbuizznvrTJzgXJwg61clwoMtnxJrshbvIln0mqldnxX5972QW3H5WYCyqm64ogdMZTLxupyrvWbpO95yVlxxmXcro0xAt7TZI7OOnhkitFclRkvexU2ErydTJOmiAnmxtROaEV5OP4gFBrZugfLwxZphUxPWcrUZBmo9Mey2vn+OzikXjsszPlyAi1gIwY3fPcMRgWMnoHWeNnyBlBK4TuSgsCH9L2cacAF5exMFMLvN9o48amCFwd9rJLre98FWgbz/6m3CVIKY7NGotbLn1QiAB/wt0Szz/sWQXvwGNmlagqcn0nnCSo4YYcnAsJVPDG/0DQXJuLCOrkzWYeddtsG1kUC+g3z/I80VYkkidGlNysg19M49s8KFLSo+RS5zwZf/AE0142VkOuVhxWcy5tKAN7RW6piwk3OAsXqetj22srImbsS4T/8Fa3KZXfNf1T5HJ02uQ6mn8jl0dd3l7g50U2Uk98kwwbW2xKprR7fNTtx+BW7lFyKUrhLOiwXuLXaRACevK6ffFblqSCYsldKw0M2Iry2LzM7sLblxn5+Xsw8r/ro+T3ovTlNeXahKnhvFG0Xy1X/B7wo80eOyHpKQxTvpyRCQWQrANZJkbdoRYYEgvcBUC0KbmDaKTcj0cx8pyD49S2rw/2sb5HLe4lvwPI0b1LYR+DmELF5q3uAYgaeZpGTT4lzR2brZm3ZCxDTpeulCkChivTJghxQkg3gtcNUNQY2CqAYMJGr6fa4Axsdaf3xfTqEuJmZgU3ZLtVT9pzOkbx8AAs274wOJ6rA7iMvXtylbwT7ktDxP7q6Cge0LhD+VGEcdtHYmlh4n1uyKxETv0w6laoarL9mz+wMOrH4fD018FgeDAc/NSe2x/4MGb7zTtmI3vSbv568k6Qv/1wfsj51P159Gl+OL496rFbJA5Hnxz2D8If3JEZb+hEkXeGyx6b+JkU+e+0nuo7UifKyzCprzH5yLq2ka7JVhjP1Myax0TXLEamQVzUdsYSUtQE6Ki2n9HK3eUOVisExBfAbs1bx1VObd6Qok2WQOHYCAun4kNCYQtqAxwQe4E4y1cLrReSXq21d34WmiYxv04pGnokJjb7wyW6S+6Fc1VdOZD/RiiysDJzLsW/VDTR2ppId2A8KcLFeL6korOLA4BtIx8Y/RWtNXJUJnkacoAR93G9fyc8v+ML6sI+AvIu7nSHT9pPa6it5oFX/5cW7LMF/RwX44rqOo4LAbXxmJ6zafcbY+d4ydXC4/4QU5iCmKUTvN6Aw3rE4RtvgBV6h6kQvhUWgaRUd6GzB1Lnd/HLYPsfSDGvnjkKAAA=" ConnectionId="03b02eff-a0b0-47a7-b4ad-44cd9bbc0cb4" DisplayName="Connector activity" sap:VirtualizedContainerService.HintSize="486.4,216" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="754bb15f-7f23-35c7-bf23-c7ccbb5685e8">
       <isactr:ConnectorActivity.FieldObjects>
         <isactr:FieldObject Name="Jit_comments" Type="FieldArgument">
           <isactr:FieldObject.Value>
@@ -152,19 +165,19 @@
         </isactr:FieldObject>
       </isactr:ConnectorActivity.FieldObjects>
     </isactr:ConnectorActivity>
-    <ui:ForEach x:TypeArguments="uiascb:comments" CurrentIndex="[n]" DisplayName="For Each comment" sap:VirtualizedContainerService.HintSize="451.2,356" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[yt_Comments]">
+    <ui:ForEach x:TypeArguments="uiascb:comments" CurrentIndex="[n]" DisplayName="For Each comment" sap:VirtualizedContainerService.HintSize="486.4,802.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[yt_Comments]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="uiascb:comments">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="uiascb:comments" Name="comment" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,672" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[comments]</OutArgument>
               </Assign.To>
@@ -172,14 +185,43 @@
                 <InArgument x:TypeArguments="x:String">[comments + (n+1).ToString() + ". " + comment.topLevelComment.snippet.textOriginal + Environment.NewLine]</InArgument>
               </Assign.Value>
             </Assign>
+            <If Condition="[Not String.IsNullOrWhiteSpace(comment.topLevelComment.snippet.textOriginal)]" DisplayName="To prevent storing blank comments" sap:VirtualizedContainerService.HintSize="451.2,437.6" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,218.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="416,158.4" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[comment.topLevelComment.snippet.textOriginal]" List="[commentsList]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Fetched comments for VideoID : &quot; + videoId]" />
-    <Assign sap:VirtualizedContainerService.HintSize="451.2,165.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Fetched comments for VideoID : &quot; + videoId]" />
+    <Assign DisplayName="List of Comments for per-opinion analysis" sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("Comments")]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">[commentsList]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Merged Comments for Bulk Gen AI analysis like PII" sap:VirtualizedContainerService.HintSize="486.4,165.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("MergedText")]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">["Description : " + in_out_AuditContext("Description").ToString() + Environment.NewLine + "Comments : " + Environment.NewLine + comments]</InArgument>

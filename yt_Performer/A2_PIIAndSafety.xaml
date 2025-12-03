@@ -42,6 +42,7 @@
       <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
       <x:String>UiPath.Platform.Activities</x:String>
       <x:String>UiPath.IntegrationService.Activities.SWEntities.CB2C7794397_piiminus_signdetection_Create.Bundle</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -94,19 +95,14 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>CB2C7794397_piiminus.tmIez19KFpF1GRygU3qcDjf1</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="A2_PIIAndSafety" sap:VirtualizedContainerService.HintSize="746.8000000000001,1710.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="A2_PIIAndSafety" sap:VirtualizedContainerService.HintSize="678,1904" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Object" Name="piiResult" />
       <Variable x:TypeArguments="x:String" Name="piiDetails">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">No PII found.</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Boolean" Name="piiFound">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" />
+          <Literal x:TypeArguments="x:String" Value="" />
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="comments" />
@@ -118,15 +114,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="513.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="548.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[comments]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_out_AuditContext("Comments").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String">[in_out_AuditContext("MergedText").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="513.6,746.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="548.8,752.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <isactr:ConnectorActivity Configuration="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" ConnectionId="273274ad-a1cb-48d3-bd09-42b2c7794397" DisplayName="PII Filtering" sap:VirtualizedContainerService.HintSize="512,236" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="7439dcbc-32df-3cce-82d2-1c14ac68b65d">
           <isactr:ConnectorActivity.FieldObjects>
@@ -211,54 +207,62 @@
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <Assign sap:VirtualizedContainerService.HintSize="513.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("MaskedText")]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[out_maskedText]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <If Condition="[jit_piiminus_signdetection IsNot Nothing]" sap:VirtualizedContainerService.HintSize="513.6,592" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[jit_piiminus_signdetection IsNot Nothing AndAlso &#xA;jit_piiminus_signdetection.detectedEntities IsNot Nothing AndAlso &#xA;jit_piiminus_signdetection.detectedEntities.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="548.8,782.4" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,231.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="547.2,412.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-            <ui:MultipleAssign.AssignOperations>
-              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Found")]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Object">[True]</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Details")]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Object">[jit_piiminus_signdetection.detectedEntities]</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-              </scg:List>
-            </ui:MultipleAssign.AssignOperations>
-          </ui:MultipleAssign>
+          <ui:ForEach x:TypeArguments="uiascb:detectedEntities" CurrentIndex="{x:Null}" DisplayName="For Each piiEntity" sap:VirtualizedContainerService.HintSize="513.6,352.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[jit_piiminus_signdetection.detectedEntities]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="uiascb:detectedEntities">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="uiascb:detectedEntities" Name="piiEntity" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,231.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Found")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[True]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[piiDetails]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[piiDetails + "Type : " + piiEntity.identifier.ToString() + Environment.NewLine + "Value : " + piiEntity.text.ToString() + Environment.NewLine + "Confidence Score : " + Math.Round(CDbl(piiEntity.confidenceScore) * 100, 2).ToString() + "%" + Environment.NewLine]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,231.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="547.2,231.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="513.6,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -271,10 +275,10 @@
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
                   <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Details")]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[piiDetails]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Object">["No PII Found"]</InArgument>
+                    <InArgument x:TypeArguments="x:String">No PII Found</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>
@@ -283,5 +287,27 @@
         </Sequence>
       </If.Else>
     </If>
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="548.8,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("PII_Details")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[piiDetails]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[in_out_AuditContext("MaskedText")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[out_maskedText]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
   </Sequence>
 </Activity>
